@@ -243,6 +243,12 @@ img {
 }
 
 @media screen and (max-width: 600px) {
+    .card-container {
+        gap: 50px;
+    }
+    .section {
+        margin-bottom: 50px;
+    }
     .card {
         grid-template-columns: 1fr;
         min-height: unset;
