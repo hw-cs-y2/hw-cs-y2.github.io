@@ -124,11 +124,15 @@ img {
     text-align: center;
     text-decoration: none;
     font-size: 17px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.button::first-letter {
+    text-decoration: underline;
 }
 
 .card .button-area .button:last-of-type {
-    margin-bottom: 5px;
+    margin-bottom: 0;
 }
 
 .card .button-area .button:hover {
@@ -148,15 +152,29 @@ img {
 .section.notice {
     border-color: rgb(200, 0, 0);
     border-width: 3px;
-    border-radius: 5px;
     background-color: rgb(239, 239, 203);
-    padding: 5px;
+    padding: 5px 20px;
 }
 
 .section.notice * {
-    margin: 5px 0;
+    font-weight: bold;
     color: black !important;
 }
+
+.section.notice .heading {
+    margin: 5px 0 20px;
+    font-size: 32px;
+}
+
+.section.notice p {
+    display: block;
+    margin: 15px auto;
+    font-size: 17px;
+    width: 500px;
+    max-width: calc(100% - 20px);
+}
+
+
 
 .section.readme {
     border-radius: 5px;
@@ -201,6 +219,19 @@ img {
     text-align: center;
 }
 
+@media screen and (max-width: 800px) {
+    .section.notice .heading,
+    .card .text-area .heading {
+        font-size: 28px;
+    }
+    .section.notice p {
+        font-size: 16px;
+    }
+    .card .button-area .button {
+        padding: 10px 15px !important;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .card-container {
         grid-template-columns: 1fr;
@@ -211,10 +242,7 @@ img {
     .head .head-text .subtitle {
         font-size: 16px;
     }
-  }
-
-@media screen and (max-width: 800px) {
-    .card .text-area .heading {
-        font-size: 28px;
+    .section.notice .heading {
+        font-size: 22px;
     }
-}
+  }
