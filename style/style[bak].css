@@ -5,7 +5,7 @@
 }
 
 body {
-    width: 1000px;
+    width: 800px;
     margin: 20px auto;
     max-width: calc(100% - 40px);
     background-color: rgb(25,25,25);
@@ -71,59 +71,54 @@ img {
 }
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin: 30px 0;
 }
 
 .card {
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-rows: 225px max-content max-content;
     border: 1px solid rgb(230,230,230);
     height: max-content;
-    min-height: 300px;
-    width: 100%;
+}
+
+.card .img-area {
+    border-bottom: 1px solid rgb(230,230,230);
+    max-height: 225px;
     overflow: hidden;
 }
 
-.card .image-pane {
-    border-width: 0 1px 0 0;
-    border-style: solid;
-    border-color: rgb(230,230,230);
-}
-
-.card .image-pane img {
+.card .img-area img {
     object-fit: cover;
     object-position: 50% 50%;
+    max-width: unset;
+    max-height: unset;
     border: none;
     width: 100%;
     height: 100%;
 }
 
-.card .info-pane .text-area .heading {
-    font-weight: normal;
-    font-size: 32px;
-}
-
-.card .info-pane {
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    padding: 15px;
+.card .text-area {
+    padding: 10px;
 }
 
 .card .button-area {
-    flex: 1 100%;
-    max-width: 100%;
-    padding: 10px 0;
+    border-top: 1px dashed rgb(230,230,230);
+    padding: 10px;
+}
+
+.card .text-area .heading {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 20px;
 }
 
 .card .button-area .button {
     display: block;
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 10px;
     border: 1px solid rgb(230,230,230);
     background-color: rgb(45,45,45);
     text-align: center;
@@ -137,7 +132,7 @@ img {
 }
 
 .card .button-area .button:last-of-type {
-    margin-bottom: -5px;
+    margin-bottom: 0;
 }
 
 .card .button-area .button:hover {
@@ -179,8 +174,9 @@ img {
     max-width: calc(100% - 20px);
 }
 
-.card,
-.section {
+
+
+.section.readme {
     border-radius: 5px;
 }
 
@@ -224,37 +220,21 @@ img {
 }
 
 @media screen and (max-width: 800px) {
-    .card {
-        grid-template-columns: 300px 1fr;
-    }
     .section.notice .heading,
-    .card .info-pane .text-area .heading {
+    .card .text-area .heading {
         font-size: 28px;
     }
     .section.notice p {
         font-size: 16px;
     }
-}
-
-@media screen and (max-width: 700px) {
-    .card {
-        grid-template-columns: 225px 1fr;
+    .card .button-area .button {
+        padding: 10px 15px !important;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .card {
+    .card-container {
         grid-template-columns: 1fr;
-        min-height: unset;
-    }
-    .card .image-pane {
-        border-width: 0 0 1px 0;
-    }
-    .card .info-pane {
-        padding: 10px;
-    }
-    .card .info-pane .text-area .heading {
-        font-size: 26px;
     }
     .head .head-text .title {
         font-size: 24px;
