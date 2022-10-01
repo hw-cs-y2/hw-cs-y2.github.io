@@ -1,0 +1,220 @@
+
+* {
+    color: rgb(230,230,230);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 800px;
+    margin: 20px auto;
+    max-width: calc(100% - 40px);
+    background-color: rgb(25,25,25);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 5px 0;
+}
+
+p, .button {
+    letter-spacing: 0.1px;
+    word-spacing: 1px;
+}
+
+a {
+    text-decoration: dotted underline;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+a:active {
+    text-decoration: none;
+    color: rgb(200,200,200);
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid rgb(230,230,230);
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head .head-text {
+    text-align: right;
+}
+
+.head .head-text .title {
+    font-family: monospace;
+    font-weight: normal;
+    margin: 5px;
+    font-size: 28px;
+}
+
+.head .head-text .subtitle {
+    font-family: monospace;
+    font-weight: normal;
+    margin: 5px;
+    font-size: 18px;
+    color: rgb(230,230,230);
+}
+
+.head img {
+    max-width: 100px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: 225px max-content max-content;
+    border: 1px solid rgb(230,230,230);
+    height: max-content;
+}
+
+.card .img-area {
+    border-bottom: 1px solid rgb(230,230,230);
+    max-height: 225px;
+    overflow: hidden;
+}
+
+.card .img-area img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    max-width: unset;
+    max-height: unset;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.card .text-area {
+    padding: 10px;
+}
+
+.card .button-area {
+    border-top: 1px dashed rgb(230,230,230);
+    padding: 10px;
+}
+
+.card .text-area .heading {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.card .button-area .button {
+    display: block;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid rgb(230,230,230);
+    background-color: rgb(45,45,45);
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.card .button-area .button:last-of-type {
+    margin-bottom: 5px;
+}
+
+.card .button-area .button:hover {
+    background-color: rgb(85,85,85);
+}
+
+.card .button-area .button:active {
+    background-color: rgb(55,55,55);
+}
+
+.section {
+    margin: 30px 0;
+    border: 1px solid rgb(230,230,230);
+    padding: 15px;
+}
+
+.section.notice {
+    border-color: rgb(200, 0, 0);
+    border-width: 3px;
+    border-radius: 5px;
+    background-color: rgb(239, 239, 203);
+    padding: 5px;
+}
+
+.section.notice * {
+    margin: 5px 0;
+    color: black !important;
+}
+
+.section.readme {
+    border-radius: 5px;
+}
+
+.section.readme span:first-of-type{
+    display: block;
+    color: rgb(200,200,200);
+    font-size: 12px;
+    margin: 5px 0 30px;
+    letter-spacing: 0.3px;
+}
+
+.section.readme span:first-of-type::after {
+    font-size: 12px;
+    font-family: monospace;
+    content: "hw-cs-y2/README.md";
+}
+
+.section.readme h1,
+.section.readme h2, 
+.section.readme h3 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(150,150,150);
+}
+
+.no-select {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+.footer {
+    text-align: center;
+    padding: 4px;
+    font-size: 13px;
+    color: rgb(200,200,200);
+}
+
+.centered {
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+    .head .head-text .title {
+        font-size: 24px;
+    }
+    .head .head-text .subtitle {
+        font-size: 16px;
+    }
+  }
+
+@media screen and (max-width: 800px) {
+    .card .text-area .heading {
+        font-size: 28px;
+    }
+}
