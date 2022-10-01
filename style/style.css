@@ -185,17 +185,17 @@ img {
 }
 
 .section.readme span:first-of-type{
-    display: block;
+    display: inline-block;
     color: rgb(200,200,200);
     font-size: 12px;
-    margin: 5px 0 30px;
+    margin: 5px 0 10px;
     letter-spacing: 0.3px;
-}
-
-.section.readme span:first-of-type::after {
     font-size: 12px;
     font-family: monospace;
-    content: "hw-cs-y2/README.md";
+}
+
+.section.readme span:first-of-type span {
+    color: rgb(150,150,150);
 }
 
 .section.readme h1,
